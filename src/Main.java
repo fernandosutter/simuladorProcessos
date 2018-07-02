@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Processo " + processo.pid + " criado.");
         System.out.println("Iniciando simulação de execução do processo...");
 
-
+        Impressora.imprimirtemplate();
 
 
 
