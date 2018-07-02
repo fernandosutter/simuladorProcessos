@@ -1,29 +1,29 @@
 
 public class GerenciadorDeProcessos {
-		public String filaProntos;
-		public boolean processoFinalizado;
-		public int qtdeFinalizados;
-		public int qtdeNaEspera;
+		public static String filaProntos;
+		public static boolean processoFinalizado;
+		public static int qtdeFinalizados;
+		public static int qtdeNaEspera;
 		
 		
-		public String atualizarCarga(String cargaDeTrabalho) {
+		public static String atualizarCarga(String cargaDeTrabalho) {
 			return cargaDeTrabalho;
 			
 		}
 		
-		public int ContarQtdeCiclo(int QtdeCiclo) {
+		public static int ContarQtdeCiclo(int QtdeCiclo) {
 			return QtdeCiclo;
 		}
 		
-		public void removerFila(int pid) {
+		public static void removerFila(int pid) {
 		
 		}
 		
-		public void enviarFila(int pid) {
+		public static void enviarFila(int pid) {
 			
 		}
 		
-		public void simulaProcessos() {
+		public static void simulaProcessos() {
 			
 		}
 }
