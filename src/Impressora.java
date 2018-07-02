@@ -2,9 +2,9 @@ public class Impressora {
 // Faltando as Variáveis
 
 	public static void imprimirtemplate() {
-		System.out.println("===========================================\n" +
+		System.out.println("==============================================================\n" +
 				"| Gerenciador de Processos\n" +
-				"===========================================\n" +
+				"==============================================================\n" +
 				"| Contador de ciclo de execução:\n" +
 				"| Processos na fila de pronto \n" +
 				"| Processo em execução: \n" +
@@ -13,10 +13,8 @@ public class Impressora {
 				"| Processos esperando: \n" +
 				"| Carga de trabalho: \n" +
 				"| Processos finalizados: \n" +
-				"===========================================\n"+
+				"==============================================================\n"+
 				"Processo " + Processo.pid + " " + Processo.nomeProcesso + " Estado Atual: ");
-
-
 
 	}
  

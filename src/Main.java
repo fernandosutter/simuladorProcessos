@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        Random randon = new Random();
+        Random random = new Random();
         Processo processo = new Processo();
         System.out.println("Informe o Quantum:");
         processo.quantum = scan.nextInt();
@@ -12,14 +12,12 @@ public class Main {
         processo.nomeProcesso = scan.next();
         System.out.println("Informe a carga de trabalho:");
         processo.cargadeTrabalho = scan.next();
-        processo.pid = randon.nextInt(50);
+        processo.pid = random.nextInt(50);
 
         System.out.println("Processo " + processo.pid + " criado.");
         System.out.println("Iniciando simulação de execução do processo...");
 
         Impressora.imprimirtemplate();
-
-
 
         //System.out.println(processo.nomeProcesso);
         //System.out.println(processo.quantum);

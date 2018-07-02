@@ -1,4 +1,3 @@
-
 public class GerenciadorDeProcessos {
 		public static String filaProntos;
 		public static boolean processoFinalizado;
@@ -8,7 +7,6 @@ public class GerenciadorDeProcessos {
 		
 		public static String atualizarCarga(String cargaDeTrabalho) {
 			return cargaDeTrabalho;
-			
 		}
 		
 		public static int ContarQtdeCiclo(int QtdeCiclo) {
