@@ -1,4 +1,4 @@
-public class Impressora {
+public class Impressora{
 // Faltando as Variáveis
 
 	public static void imprimirtemplate() {
