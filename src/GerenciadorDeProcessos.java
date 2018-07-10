@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GerenciadorDeProcessos {
-		public static boolean processoFinalizado;
+		private boolean processoFinalizado;
 		public Processo pronto;
 		public static Processo executando;
 		public static Processo esperando;
@@ -21,14 +21,12 @@ public class GerenciadorDeProcessos {
 		
 		}
 		
-		public static void enviarFila(int pid) {
-			
-		}
-		
-		public static String processarCarga(String cargaDeTrabalho) {
+		public String processarCarga(String cargaDeTrabalho) {
+			System.out.println("VEIO ATE AQUI2");
 			switch (cargaDeTrabalho.charAt(0)) {
 				case 'A':
-					//a fazer
+					cargaDeTrabalho = cargaDeTrabalho.replaceFirst("A", "");
+					System.out.println("VEIO ATE AQUI2");
 					break;
 				case 'B':
 					cargaDeTrabalho = cargaDeTrabalho.replaceFirst("B", "A");
@@ -43,6 +41,23 @@ public class GerenciadorDeProcessos {
 			        catch(Exception e)
 			        {}  
 					break;
+				case 'D':
+					esperando = executando;
+					System.out.println("Tecle ENTER: ");
+					try
+			        {
+			            System.in.read();
+			        }  
+			        catch(Exception e)
+			        {}  
+					cargaDeTrabalho = cargaDeTrabalho.replaceFirst("D", "C");
+					break;
+				default:
+					System.out.println("D:");
+					System.out.println("VEIO ATE AQUI TAMBEM");
+					
+					break;
+					
 					
 				
 					
@@ -52,29 +67,39 @@ public class GerenciadorDeProcessos {
 			}
 			return cargaDeTrabalho;
 		}
-		
-		public static void simulaProcessos() {
-			
-			
-		}
+	
 
 		public void programa(){
 			Scanner scan = new Scanner(System.in);
 			Random random = new Random();
 			Processo processo = new Processo();
 			System.out.println("Informe o Quantum:");
-			processo.quantum = scan.nextInt();
+			processo.quantum = (scan.nextInt());
 			System.out.println("Informe o nome do novo Processo:");
 			processo.nomeProcesso = scan.next();
 			System.out.println("Informe a carga de trabalho:");
-			processo.cargaDeTrabalho = scan.next();
-			processo.pid = random.nextInt(50);
+			processo.cargaDeTrabalho = (scan.next());
+			processo.setPid(random.nextInt(50));
 
-			System.out.println("Processo " + processo.pid + " criado.");
+			System.out.println("Processo " + processo.getPid() + " criado.");
 			System.out.println("Iniciando simulação de execução do processo...");
 			
+			for (int i = processo.quantum; i > 0; i--) {
+				processarCarga(processo.cargaDeTrabalho);
+				System.out.println(processo.cargaDeTrabalho.charAt(0));
+				System.out.println(processo.cargaDeTrabalho);
+			}
 			Impressora.imprimirtemplate();
+			
+			
 
+		}
 
+		public boolean isProcessoFinalizado() {
+			return processoFinalizado;
+		}
+
+		public void setProcessoFinalizado(boolean processoFinalizado) {
+			this.processoFinalizado = processoFinalizado;
 		}
 }

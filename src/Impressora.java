@@ -1,4 +1,4 @@
-public class Impressora{
+public class Impressora {
 // Faltando as Variáveis
 
 	public static void imprimirtemplate() {
@@ -14,7 +14,7 @@ public class Impressora{
 				"| Carga de trabalho: \n" +
 				"| Processos finalizados: \n" +
 				"==============================================================\n"+
-				"Processo " + Processo.pid + " " + Processo.nomeProcesso + " Estado Atual: ");
+				"Processo " + Processo.getPid() + " " + Processo.nomeProcesso + " Estado Atual: ");
 
 	}
  
