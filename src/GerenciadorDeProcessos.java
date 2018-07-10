@@ -85,9 +85,40 @@ public class GerenciadorDeProcessos {
 			System.out.println("Iniciando simulação de execução do processo...");
 			
 			for (int i = processo.quantum; i > 0; i--) {
-				processarCarga(processo.cargaDeTrabalho);
-				System.out.println(processo.cargaDeTrabalho.charAt(0));
-				System.out.println(processo.cargaDeTrabalho);
+				switch (processo.cargaDeTrabalho.charAt(0)) {
+				case 'A':
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("A", "");
+					System.out.println("VEIO ATE AQUI2");
+					System.out.println(processo.cargaDeTrabalho);
+					break;
+				case 'B':
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("B", "A");
+					break;
+				case 'C':
+					esperando = executando;
+					System.out.println("Tecle ENTER: ");
+					try
+			        {
+			            System.in.read();
+			        }  
+			        catch(Exception e)
+			        {}  
+					break;
+				case 'D':
+					esperando = executando;
+					System.out.println("Tecle ENTER: ");
+					try
+			        {
+			            System.in.read();
+			        }  
+			        catch(Exception e)
+			        {}  
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("D", "C");
+					break;
+				default:
+					System.out.println("D:");
+					System.out.println("VEIO ATE AQUI TAMBEM");
+				}		
 			}
 			Impressora.imprimirtemplate();
 			
