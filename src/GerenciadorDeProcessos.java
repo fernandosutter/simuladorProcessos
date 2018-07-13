@@ -16,10 +16,7 @@ public class GerenciadorDeProcessos {
 			QtdeCiclo += 1;
 			return QtdeCiclo;
 		}
-		
-		public static void removerFila(int pid) {
-		
-		}
+
 		
 		public String processarCarga(String cargaDeTrabalho) {
 			System.out.println("VEIO ATE AQUI2");
@@ -58,12 +55,6 @@ public class GerenciadorDeProcessos {
 					
 					break;
 					
-					
-				
-					
-					
-			
-			
 			}
 			return cargaDeTrabalho;
 		}
@@ -74,14 +65,24 @@ public class GerenciadorDeProcessos {
 			Random random = new Random();
 			Processo processo = new Processo();
 			System.out.println("Informe o Quantum:");
-			processo.quantum = (scan.nextInt());
+
+			processo.quantum = scan.nextInt();
+
+
 			System.out.println("Informe o nome do novo Processo:");
-			processo.nomeProcesso = scan.next();
+			Processo.nomeProcesso = scan.next();
 			System.out.println("Informe a carga de trabalho:");
+
 			processo.cargaDeTrabalho = (scan.next());
 			processo.setPid(random.nextInt(50));
 
 			System.out.println("Processo " + processo.getPid() + " criado.");
+
+			processo.cargaDeTrabalho = scan.next();
+			processo.pid = random.nextInt(50);
+
+			System.out.println("Processo " + processo.pid + " criado.");
+
 			System.out.println("Iniciando simulação de execução do processo...");
 			
 			for (int i = processo.quantum; i > 0; i--) {
@@ -122,15 +123,18 @@ public class GerenciadorDeProcessos {
 			}
 			Impressora.imprimirtemplate();
 			
-			
+
 
 		}
 
 		public boolean isProcessoFinalizado() {
+
 			return processoFinalizado;
 		}
 
+
 		public void setProcessoFinalizado(boolean processoFinalizado) {
+
 			this.processoFinalizado = processoFinalizado;
 		}
 }

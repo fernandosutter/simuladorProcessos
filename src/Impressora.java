@@ -6,10 +6,10 @@ public class Impressora {
 				"| Gerenciador de Processos\n" +
 				"==============================================================\n" +
 				"| Contador de ciclo de execução:\n" +
-				"| Processos na fila de pronto \n" +
-				"| Processo em execução: \n" +
-				"| Tempo restante: \n" +
-				"| Carga de trabalho: \n" +
+				"| Processos na fila de pronto: \n" +
+				"| Processo em execução: " + Processo.pid + "\n" +
+				"| Tempo restante: " + Processo.quantum + "\n" +
+				"| Carga de trabalho: " + Processo.cargaDeTrabalho + "\n" +
 				"| Processos esperando: \n" +
 				"| Carga de trabalho: \n" +
 				"| Processos finalizados: \n" +
