@@ -72,16 +72,10 @@ public class GerenciadorDeProcessos {
 			System.out.println("Informe o nome do novo Processo:");
 			Processo.nomeProcesso = scan.next();
 			System.out.println("Informe a carga de trabalho:");
-
-			processo.cargaDeTrabalho = (scan.next());
+			processo.cargaDeTrabalho = scan.next();
 			processo.setPid(random.nextInt(50));
 
 			System.out.println("Processo " + processo.getPid() + " criado.");
-
-			processo.cargaDeTrabalho = scan.next();
-			processo.pid = random.nextInt(50);
-
-			System.out.println("Processo " + processo.pid + " criado.");
 
 			System.out.println("Iniciando simulação de execução do processo...");
 			

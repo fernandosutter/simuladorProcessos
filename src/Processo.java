@@ -5,7 +5,8 @@ public class Processo {
 	public static int quantum;
 	private int tempoRestante;
 	private int qtdeCiclo;
-	private String estado;
+	public static String estado;
+
 	
 	public String getEstado() {
 
