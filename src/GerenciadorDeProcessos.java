@@ -86,7 +86,40 @@ public class GerenciadorDeProcessos {
 			System.out.println("Iniciando simulação de execução do processo...");
 			
 			for (int i = processo.quantum; i > 0; i--) {
-				switch (processo.cargaDeTrabalho.charAt(0)) {
+				if (processo.cargaDeTrabalho.charAt(0)== 'A') {
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("A", "");
+					System.out.println(processo.cargaDeTrabalho);
+				}
+				
+				else if (processo.cargaDeTrabalho.charAt(0)== 'B') {
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("B", "A");
+					System.out.println(processo.cargaDeTrabalho);
+				}
+				else if(processo.cargaDeTrabalho.charAt(0)== 'C') {
+					esperando = executando;
+					System.out.println("Tecle ENTER: ");
+					try
+			        {
+			            System.in.read();
+			        }  
+			        catch(Exception e)
+			        {}  
+					
+				
+				}
+				else if(processo.cargaDeTrabalho.charAt(0)== 'D') {
+					esperando = executando;
+					System.out.println("Tecle ENTER: ");
+					try
+			        {
+			            System.in.read();
+			        }  
+			        catch(Exception e)
+			        {}  
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("C", "D");
+				}
+				
+				/*	switch (processo.cargaDeTrabalho.charAt(0)) {
 				case 'A':
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("A", "");
 					System.out.println("VEIO ATE AQUI2");
@@ -118,8 +151,8 @@ public class GerenciadorDeProcessos {
 					break;
 				default:
 					System.out.println("D:");
-					System.out.println("VEIO ATE AQUI TAMBEM");
 				}		
+		*/
 			}
 			Impressora.imprimirtemplate();
 			
