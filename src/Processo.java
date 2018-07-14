@@ -1,12 +1,12 @@
-public class Processo {
+public class Processo extends GerenciadorDeProcessos {
 	public static String nomeProcesso;
 	public static int pid;
 	public static String cargaDeTrabalho;
 	public static int quantum;
 	private int tempoRestante;
-	private int qtdeCiclo;
+	private static int qtdeCiclo;
 	public static String estado;
-
+	private boolean processoFinalizado;
 	
 	public String getEstado() {
 
@@ -16,9 +16,8 @@ public class Processo {
 
 		this.estado = estado;
 	}
-	public int getQtdeCiclo() {
-		return
-				qtdeCiclo;
+	public static int getQtdeCiclo() {
+		return qtdeCiclo;
 	}
 	public void setQtdeCiclo(int qtdeCiclo) {
 
@@ -55,4 +54,17 @@ public class Processo {
 
 	}
 
+	public void contarCiclo() {
+		setQtdeCiclo(getQtdeCiclo() + 1);
+	}
+	public boolean isProcessoFinalizado() {
+		return processoFinalizado;
+	}
+	public void setProcessoFinalizado(boolean processoFinalizado) {
+		this.processoFinalizado = processoFinalizado;
+	}
+
+	public String toString() {
+		return "Processo" + pid;
+	}
 }

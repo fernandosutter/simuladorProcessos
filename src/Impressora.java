@@ -4,9 +4,9 @@ public class Impressora {
 		System.out.println("==============================================================\n" +
 				"| Gerenciador de Processos\n" +
 				"==============================================================\n" +
-				"| Contador de ciclo de execuÃ§Ã£o:"+ Processo.estado + "\n" +
+				"| Contador de ciclo de execução:"+ Processo.getQtdeCiclo() + "\n" +
 				"| Processos na fila de pronto:" + Processo.pid + "\n" +
-				"| Processo em execuÃ§Ã£o: " + Processo.pid + "\n" +
+				"| Processo em execução: " + Processo.pid + "\n" +
 				"| Tempo restante: " + Processo.quantum + "\n" +
 				"| Carga de trabalho: " + Processo.cargaDeTrabalho + "\n" +
 				"| Processos esperando: \n" +
