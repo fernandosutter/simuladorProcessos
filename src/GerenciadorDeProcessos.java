@@ -121,7 +121,7 @@ public class GerenciadorDeProcessos {
 
 		System.out.println("Processo " + processo.getPid() + " criado.");
 
-		System.out.println("Iniciando simulaÁ„o de execuÁ„o do processo...");
+		System.out.println("Iniciando simula√ß√£o de execu√ß√£o do processo...");
 		
 		processo.setProcessoFinalizado(false);
 		
@@ -135,15 +135,16 @@ public class GerenciadorDeProcessos {
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("A", "");
 					processo.atualizarProcessoExe();
 					processo.executando = processo;
-					System.out.println("ProxÌma aÁ„o: executar um ciclo de CPU");
 					System.out.println("Estado Atual: Executando");
+					System.out.println("Prox√≠ma a√ß√£o: executar um ciclo de CPU");
 				}
 
 				else if (processo.cargaDeTrabalho.charAt(0)== 'B') {
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("B", "A");
 					processo.contarCiclo();
 					processo.atualizarProcessoExe();
-					System.out.println("ProxÌma aÁ„o: executar um ciclo de CPU");
+					System.out.println("Estado Atual: Executando");
+					System.out.println("Prox√≠ma a√ß√£o: executar um ciclo de CPU");
 					System.out.println(processo.cargaDeTrabalho);
 				}
 				else if(processo.cargaDeTrabalho.charAt(0)== 'C') {
@@ -192,7 +193,7 @@ public class GerenciadorDeProcessos {
 		processo.atualizarProcessoTer();
 		processo.terminando = processo;
 		System.out.println("Estado Atual: Termimando");
-		System.out.println("O processo ser· excluido");
+		System.out.println("O processo ser√° excluido");
 
 
 
