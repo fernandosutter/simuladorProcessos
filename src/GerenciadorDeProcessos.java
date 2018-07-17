@@ -133,21 +133,26 @@ public class GerenciadorDeProcessos {
 
 				if (processo.cargaDeTrabalho.charAt(0) == 'A') {
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("A", "");
-					processo.contarCiclo();
-					System.out.println(processo.cargaDeTrabalho + "VEIO");
 					processo.atualizarProcessoExe();
-					//processo.executando = processo;
-					System.out.println(processo.executando);
+					processo.executando = processo;
+					System.out.println("Proxíma ação: executar um ciclo de CPU");
+					System.out.println("Estado Atual: Executando");
 				}
 
 				else if (processo.cargaDeTrabalho.charAt(0)== 'B') {
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("B", "A");
 					processo.contarCiclo();
+					processo.atualizarProcessoExe();
+					System.out.println("Proxíma ação: executar um ciclo de CPU");
 					System.out.println(processo.cargaDeTrabalho);
 				}
 				else if(processo.cargaDeTrabalho.charAt(0)== 'C') {
-					esperando = executando;
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("C", "");
 					processo.contarCiclo();
+					processo.atualizarProcessoEsp();
+					processo.esperando = processo;
+					System.out.println("Estado Atual: Esperado");
+					System.out.println("Aguardando E/S");
 					System.out.println("Tecle ENTER: ");
 					try
 					{
@@ -155,12 +160,16 @@ public class GerenciadorDeProcessos {
 					}  
 					catch(Exception e)
 					{}  
-
 
 				}
 				else if(processo.cargaDeTrabalho.charAt(0)== 'D') {
+					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("D", "C");
 					esperando = executando;
 					processo.contarCiclo();
+					processo.atualizarProcessoEsp();
+					processo.esperando = processo;
+					System.out.println("Estado Atual: Esperado");
+					System.out.println("Aguardando E/S");
 					System.out.println("Tecle ENTER: ");
 					try
 					{
@@ -168,23 +177,26 @@ public class GerenciadorDeProcessos {
 					}  
 					catch(Exception e)
 					{}  
-					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("C", "D");
-				
+					
 				}
 			
 				Impressora.imprimirtemplate();
 			}
 			else {
 				processo.setProcessoFinalizado(true);
+			
 			}
 		
 		}
 		}
-		
+		processo.atualizarProcessoTer();
+		processo.terminando = processo;
+		System.out.println("Estado Atual: Termimando");
+		System.out.println("O processo será excluido");
+
 
 
 
 	}
 
-	
 }

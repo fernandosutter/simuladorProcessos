@@ -1,5 +1,5 @@
-public class Impressora {
 
+public class Impressora {
 	public static void imprimirtemplate() {
 		System.out.println("==============================================================\n" +
 				"| Gerenciador de Processos\n" +
@@ -13,9 +13,9 @@ public class Impressora {
 				"| Carga de trabalho: \n" +
 				"| Processos finalizados: \n" +
 				"==============================================================\n"+
-				"Processo " + Processo.getPid() + " " + Processo.nomeProcesso + " Estado Atual: ");
-
+				"Processo " + Processo.getPid() + " " + Processo.nomeProcesso  + "\n" +
+				"Carga de trabalho: " + Processo.cargaDeTrabalho);
+		
 	}
- 
-}
 
+}
