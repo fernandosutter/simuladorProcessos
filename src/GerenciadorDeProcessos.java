@@ -145,7 +145,6 @@ public class GerenciadorDeProcessos {
 					processo.atualizarProcessoExe();
 					System.out.println("Estado Atual: Executando");
 					System.out.println("Proxíma ação: executar um ciclo de CPU");
-					System.out.println(processo.cargaDeTrabalho);
 				}
 				else if(processo.cargaDeTrabalho.charAt(0)== 'C') {
 					processo.cargaDeTrabalho = processo.cargaDeTrabalho.replaceFirst("C", "");
